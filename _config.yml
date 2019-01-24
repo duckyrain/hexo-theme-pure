@@ -73,21 +73,23 @@ index_widgets:
 archive_type: 'monthly'
 show_count: true
 
+# Fancybox
+fancybox: false
+
 # Search
 search:
   insight: true # you need to install `hexo-generator-json-content` before using Insight Search
-  swiftype: # enter swiftype install key here
   baidu: false # you need to disable other search engines to use Baidu search
 
 # Donate
 donate:
   enable: true
-  weipay:
-    image: images/donate/weipay.jpg
-    qrcode: images/donate/weipayimg.png
+  # 微信打赏
+  wechatpay:
+    qrcode: images/donate/wechatpayimg.png
     title: 微信支付
+  # 支付宝打赏
   alipay: 
-    image: images/donate/alipay.jpg
     qrcode: images/donate/alipayimg.png 
     title: 支付宝
 
@@ -106,7 +108,7 @@ github:
 # Gitment
 # Introduction: https://imsun.net/posts/gitment-introduction/
 comment:
-  type: youyan  # 启用哪种评论系统
+  type: valine  # 启用哪种评论系统
   disqus:  # enter disqus shortname here
   youyan: 
     uid: 1783844 # enter youyan uid 
@@ -118,6 +120,22 @@ comment:
     ClientID: 
     ClientSecret: 
     lazy: false
+  gitalk: # gitalk. https://gitalk.github.io/
+    owner:  #必须. GitHub repository 所有者，可以是个人或者组织。
+    admin:  #必须. GitHub repository 的所有者和合作者 (对这个 repository 有写权限的用户)。
+    repo:  #必须. GitHub repository.
+    ClientID:  #必须. GitHub Application Client ID.
+    ClientSecret:  #必须. GitHub Application Client Secret.
+  valine: # Valine. https://valine.js.org
+    appid:  # your leancloud application appid
+    appkey:  # your leancloud application appkey
+    notify: false # mail notifier , https://github.com/xCss/Valine/wiki
+    verify: false # Verification code
+    placeholder: Just go go # comment box placeholder
+    avatar: mm # gravatar style
+    meta: nick,mail,link # custom comment header
+    pageSize: 10 # pagination size
+    visitor: false # Article reading statistic https://valine.js.org/visitor.html
 
 # douban 豆瓣书单
 # Api：
@@ -138,7 +156,7 @@ douban:
 # PV
 pv:
   busuanzi:
-    enable: true  # 不蒜子统计
+    enable: false  # 不蒜子统计
   leancloud:
     enable: false  # leancloud统计
     app_id: # leancloud <AppID>
