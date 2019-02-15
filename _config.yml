@@ -5,8 +5,8 @@ menu:
   Categories: categories  # 分类
   Tags: tags  # 标签
   Repository: repository  # github repositories
-  Books: books  # 豆瓣书单
-  Links: links  # 友链
+  #Books: books  # 豆瓣书单
+  #Links: links  # 友链
   About: about  # 关于
 
 # Enable/Disable menu icons
@@ -17,7 +17,7 @@ menu_icons:
   categories: icon-folder
   tags: icon-tags
   repository: icon-project
-  books: icon-book-fill
+  #books: icon-book-fill
   links: icon-friendship
   about: icon-cup-fill
 
@@ -31,14 +31,14 @@ site:
     width: 40
     height: 40
     url: ../images/logo.png
-  title: Hexo # 页面title
+  title: Duckyrain的博客 # 页面title
   favicon: /favicon.png
   board: <p>欢迎交流与分享经验!</p> # 站点公告
   copyright: false # 底部版权信息
 
 # config
 config:
-  skin: # 主题颜色 theme-black theme-blue theme-green theme-purple
+  skin: theme-purple # 主题颜色 theme-black theme-blue theme-green theme-purple
   layout: main-center # 布局方式 main-left main-center main-right
   toc: true # 是否开启文章章节目录导航
   menu_highlight: false # 是否开启当前菜单高亮显示
@@ -48,7 +48,7 @@ config:
 # Pagination
 pagination:
   number: false
-  prev: 
+  prev:
     alwayShow: true
   next:
     alwayShow: true
@@ -56,94 +56,76 @@ pagination:
 # Sidebar
 sidebar: right
 widgets:
-  - board  
-  - category
-  - tag
-  - tagcloud
-  - archive
-  - recent_posts
+- board
+- category
+- tag
+- tagcloud
+- archive
+- recent_posts
 
 # display widgets at the bottom of index pages (pagination == 2)
 index_widgets:
 # - category
 # - tagcloud
-# - archive  
+# - archive
 
 # widget behavior
 archive_type: 'monthly'
 show_count: true
 
-# Fancybox
-fancybox: false
-
 # Search
 search:
   insight: true # you need to install `hexo-generator-json-content` before using Insight Search
+  swiftype: # enter swiftype install key here
   baidu: false # you need to disable other search engines to use Baidu search
 
 # Donate
 donate:
-  enable: true
-  # 微信打赏
-  wechatpay:
-    qrcode: images/donate/wechatpayimg.png
+  enable: false
+  weipay:
+    image: images/donate/weipay.jpg
+    qrcode: images/donate/weipayimg.png
     title: 微信支付
-  # 支付宝打赏
-  alipay: 
-    qrcode: images/donate/alipayimg.png 
+  alipay:
+    image: images/donate/alipay.jpg
+    qrcode: images/donate/alipayimg.png
     title: 支付宝
 
 # Share
 # weibo,qq,qzone,wechat,tencent,douban,diandian,facebook,twitter,google,linkedin
 share:
   enable: true  # 是否启用分享
-  sites: weibo,qq,wechat,facebook,twitter  # PC端显示的分享图标
-  mobile_sites: weibo,qq,qzone  # 移动端显示的分享图标
+  sites: qq,wechat,facebook,twitter  # PC端显示的分享图标
+  mobile_sites: wechat,qq  # 移动端显示的分享图标
 
 # Github
-github: 
-  username: cofess  # github username
+github:
+  username: duckyrain  # github username
 
 # Comment
 # Gitment
 # Introduction: https://imsun.net/posts/gitment-introduction/
 comment:
-  type: valine  # 启用哪种评论系统
+  type: gitment  # 启用哪种评论系统
   disqus:  # enter disqus shortname here
-  youyan: 
-    uid: 1783844 # enter youyan uid 
+  youyan:
+    uid: 2158776 # enter youyan uid
   livere:
-    uid: # enter youyan uid 
+    uid: # enter youyan uid
   gitment:
-    githubID: 
-    repo: 
-    ClientID: 
-    ClientSecret: 
+    githubID: duckyrain
+    repo: duckyrain.github.io
+    ClientID: 28f5a7640473e0e2fd40
+    ClientSecret: d9b99a7c8a903495c5c567222e94d02e0a9be7dc
     lazy: false
-  gitalk: # gitalk. https://gitalk.github.io/
-    owner:  #必须. GitHub repository 所有者，可以是个人或者组织。
-    admin:  #必须. GitHub repository 的所有者和合作者 (对这个 repository 有写权限的用户)。
-    repo:  #必须. GitHub repository.
-    ClientID:  #必须. GitHub Application Client ID.
-    ClientSecret:  #必须. GitHub Application Client Secret.
-  valine: # Valine. https://valine.js.org
-    appid:  # your leancloud application appid
-    appkey:  # your leancloud application appkey
-    notify: false # mail notifier , https://github.com/xCss/Valine/wiki
-    verify: false # Verification code
-    placeholder: Just go go # comment box placeholder
-    avatar: mm # gravatar style
-    meta: nick,mail,link # custom comment header
-    pageSize: 10 # pagination size
-    visitor: false # Article reading statistic https://valine.js.org/visitor.html
 
-# douban 豆瓣书单
-# Api：
+  # douban 豆瓣书单
+  # Api：
   # https://developers.douban.com/wiki/?title=book_v2 图书
   # https://developers.douban.com/wiki/?title=movie_v2 电影
-# books：  
+  # books：
   # https://api.douban.com/v2/book/user/:name/collections?start=0&count=100 个人书单列表
-# movies: 
+  # movies:
   # https://api.douban.com/v2/movie/in_theaters 正在上映的电影
   # https://api.douban.com/v2/movie/coming_soon 即将上映的电影
   # https://api.douban.com/v2/movie/subject/:id 单个电影信息
@@ -152,85 +134,80 @@ douban:
   user: # 豆瓣用户名
   start: 0 # 从哪一条记录开始
   count: 100 # 获取豆瓣书单数据条数
-  
+
 # PV
 pv:
   busuanzi:
-    enable: false  # 不蒜子统计
+    enable: true  # 不蒜子统计
   leancloud:
     enable: false  # leancloud统计
     app_id: # leancloud <AppID>
     app_key: # leancloud <AppKey>
-        
+
 # wordcount
 postCount:
   enable: false
   wordcount: true  # 文章字数统计
-  min2read: true  # 阅读时长预计 
+  min2read: true  # 阅读时长预计
 
 # Plugins
 plugins:
   google_analytics: # enter the tracking ID for your Google Analytics
   google_site_verification: # enter Google site verification code
   baidu_analytics: # enter Baidu Analytics hash key
-  tencent_analytics: 
-  
+  tencent_analytics:
+
 # Miscellaneous
 twitter:
 google_plus:
 fb_admins:
-fb_app_id:  
-  
+fb_app_id:
+
 # profile
 profile:
   enabled: true # Whether to show profile bar
   avatar: images/avatar.jpg
   gravatar: # Gravatar email address, if you enable Gravatar, your avatar config will be overriden
-  author: 昵称
-  author_title: Web Developer & Designer
-  author_description: 个人简介。
-  location: Shenzhen, China
-  follow: https://github.com/cofess
+  author: DuckyRain
+  author_title:
+  author_description:
+  location: 北京, 中国
+  follow: https://github.com/duckyrain
   # Social Links
   social:
     links:
-      github: https://github.com/cofess
-      weibo: http://weibo.com/cofess
-      twitter: https://twitter.com/iwebued
-      # facebook: /
-      # dribbble: /
-      behance: https://www.behance.net/cofess
-      rss: atom.xml
+      github: https://github.com/duckyrain
+      weibo: https://weibo.com/duqiyu2151
+      twitter: https://twitter.com/duqiyu2151
+      facebook: https://www.facebook.com/qiyu.du.92
+      #dribbble: /
+      #behance: /
+      #rss: atom.xml
     link_tooltip: true # enable the social link tooltip, options: true, false
-  # My Skills 
+  # My Skills
   skills:
-    Git: ★★★☆☆
-    Gulp: ★★★☆☆
+    Java: ★★★★☆
+    Python: ★★★☆☆
+    Lua: ★★★☆☆
     Javascript: ★★★☆☆
-    HTML+CSS: ★★★☆☆
-    Bootstrap: ★★★☆☆
-    ThinkPHP: ★★★☆☆
-    平面设计: ★★★☆☆
   # My Personal Links
   links:
-    Github: https://github.com/cofess
-    Blog: http://blog.cofess.com
-    微博: http://weibo.com/cofess
-    花瓣: http://huaban.com/cofess
-    Behance: https://www.behance.net/cofess
+    Github: https://github.com/duckyrain
+    Blog: http://amaging.cn
+    微博: http://weibo.com/duqiyu2151
   # My Personal Labels
   labels:
-    - 前端
-    - 前端开发
-    - 前端重构
-    - Web前端
-    - 网页重构
+  - Java
+  - python
+  - lua
+  - linux
+  - 服务端
+  - 系统架构
   # My Personal Works
-  works:
-    name:
-      link: http://www.example.com
-      date: 2016
+  #works:
+  #  name:
+  #    link: http://amaging.cn
+  #    date: 2018
   # My Personal Projects
   projects:
-    cofess/gulp-startpro: https://github.com/cofess/gulp-startpro
-    cofess/hexo-theme-pure: https://github.com/cofess/hexo-theme-pure
+    duckyrain/amaging: https://github.com/duckyrain/amaging
